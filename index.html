@@ -1,0 +1,316 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Bases Covered | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="130" height="90" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Baseball Practice</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Fans</a>
+        </li>
+        <li>
+          <a href="#vid">Grounds Crew</a>
+			</li>
+      <li>
+          <a href="#num">Program History</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Hey! Welcome To Bases Covered: Your Ultimate Source for Cal Poly baseball</h2>
+<article>
+<p class="tab">Bases Covered is your number source for everything Cal Poly baseball. Whether it's highlights of the Mustangs season to how the field is prepared, we got you covered!<br><br></p>
+<p class="tab"><a href="#gal">Let's Begin!</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Mustangs Prepare To Take On Upcoming Big West Opponent</h2>
+<article><!--beginning of article-->
+<p class="tab">After suffering two straight losses to the University of Hawaii in crushing fashion, the Mustangs held an intense practice on April 23 as they prepared for another Big West conference opponent in UC Davis. From flyball drills to hitting drills, coach Lee’s Mustangs seemed eager for their upcoming matchup.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="After suffering a 5-6 defeat to The University of Hawaii just two days prior, the Mustangs began their first day of practice of the week on Tuesday, Apr. 27 at Baggett Stadium as they prepared to host UC Davis. The two-hour practice consisted of routine drills for players- outfield/infield catching drills, pitching drills, baserunning/stealing drills, and hitting drills."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="After some light stretching and a light jog around the bases, the practice opened up with a catching drill. The team was divided into three groups on the field, each group with 16 players. Players such as catcher Mack Higuchi (junior majoring in interdisciplinary studies standing at the end) stood across teammates and played “catch”. Each time the ball was thrown back to the partner on the left side, the teammate across would take two steps back."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="With veteran head coach Larry Lee watching over, the Mustangs worked on infield catching drills in their second phase of practice. During the drill, Lee paused the group several times-advising players such as senior infielder Joe Yorke and sophomore infielder Evan Cloyd (standing near the clubhouse wall) to “react as soon as possible” and emphasizing the importance of gloves being open and protected when scooping up the ball from the ground. Despite recent success, the Mustangs struggled early in the 2024 season catching the ball infield. The team allowed eight ‘doubles’ to central coast rival UC Santa Barbara and two triples to Ohio State University."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="As some players continued to work on infield catching drills, assistant coach Jason Gill worked with catchers and pitchers on the mound. Redshirt freshman pitcher Jake Cross sits at home plate and acts as a catcher–in this drill, pitchers pretend to throw the ball toward Cross and quickly throw it to other bases to prevent the other team from stealing bases. Cross was also in charge of “protecting home plate” and deterring opponents on third base from “stealing” a run."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="Redshirt senior pitcher Ryan Baum (#47) poses as a first baseman ready to prevent redshirt catcher Owen Firestone (#43) from running to second base while the pitcher on the mound is facing the catcher at home plate. Firestone has only appeared at bat for the Mustangs three times a year while Baum has pitched a total of 38 innings. Baum has struggled to build momentum this season, only striking out four batters all year and compiling a 4.19 ERA."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="In the third part of practice, Coach Lee gathered his players near home plate to participate in a hitting drill. For this drill, assistant coach Logan Denholm loaded up the pitching machine with baseballs, and batters in the batting cage had to try and hit every ball that came their way. Leading the way was junior catcher Mack Higuchi. Higuchi hit three out of five balls, with two caught at centerfield. Higuchi has struggled in this area with nine at-bats, four hits, two runs, and has zero home runs."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="As the drill progressed, several players struggled to hit the ball consistently. Coach Lee paused the drill and reminded players to 'take it easy' and 'think about where the box is'. The Mustangs have scored 218 times this season and rank fourth in the Big West conference in runs."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="After Coach Lee paused the hitting drill, the Mustangs began hitting the ball with consistency with ease. Owen Firestone hit four of his five at-bats including one ball going for a home run. Teammates and coaches were shouting and celebrating, counting the number of hits each player had out loud."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="After a two hour practice session, players huddled up on the mound, screamed “Mustangs on three!”, and headed toward the dugout to collect their bags, gloves, bats, and bottles. Redshirt freshman pitcher Griffin Naess throws up the peace sign as freshman pitcher Caden Pearlman asks what his plans are post practice. "/>
+<img src="img/10.jpg" width="100%" height="100%" alt="After practice, a player forgot his glove in the dugout. The Mustangs will host the 18-20 UC Davis Aggies on Friday, Apr.26 in Baggett Stadium at 6 p.m. With a win, the Mustangs can improve to 23-16 and inch one step closer towards UC Irvine for the first seed in the Big West conference."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Next</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Favorite Food At A Baseball Game</h2>
+<article>
+  <p class="tab">Cal Poly baseball fans share their go to foods and drinks during a baseball game. Click on images to hear! <br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Next</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">How The Cal Poly Grounds Crew Prepares the Field for Gameday </h2>
+<article>
+<p class="tab">Learn how Turf Specialist Justin Garcia and the rest of the Cal Poly grounds crew prepare Baggett Stadium for game day! From fixing bases and rechalking lines to raking out dirt, see how the crew prepares the field with a tight deadline!</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Next</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">Past To Present: A look at the evolution of Mustangs baseball</h2>
+<article>
+<p class="tab">Past To Present: A look at the evolution of Mustangs baseball</p>
+<div class="infogram-embed" data-id="1b93ba9c-286e-408f-8040-d8a98de02c8b" data-type="interactive" data-title="Timeline - Dark"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/1b93ba9c-286e-408f-8040-d8a98de02c8b" style="color:#989898!important;text-decoration:none!important;" target="_blank">Timeline - Dark</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>   
+<!--infographic embed code here-->
+<div class="infogram-embed" data-id="af87c5c6-324d-4b65-b643-f639e299debe" data-type="interactive" data-title="List - Light"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/af87c5c6-324d-4b65-b643-f639e299debe" style="color:#989898!important;text-decoration:none!important;" target="_blank">List - Light</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Bases Covered | San Luis Obispo, CA | Copyright 2024 | Site by Ammar Khan 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
